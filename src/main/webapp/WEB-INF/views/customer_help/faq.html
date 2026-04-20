@@ -2,20 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FAQ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        :root{--cream:#FAF8F4;--ink:#1C1917;--ink-soft:#57534E;--ink-faint:#A8A29E;--border:rgba(28,25,23,.10);--border-mid:rgba(28,25,23,.18);--accent:#C4763A;--accent-light:#F5EDE3;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+        html{font-size:16px}
+        body{background:var(--cream);color:var(--ink);font-family:var(--sans);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem}
+        .page{width:100%;max-width:560px;animation:fade-up .55s cubic-bezier(.22,1,.36,1) both}
+        @keyframes fade-up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+        .eyebrow{font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:8px}
+        .eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--accent)}
+        h1{font-family:var(--serif);font-size:clamp(2.4rem,7vw,3.6rem);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:1.25rem;letter-spacing:-.01em}
+        h1 em{font-style:italic;font-weight:300;color:var(--ink-soft)}
+        .body-text{font-size:15px;font-weight:300;line-height:1.8;color:var(--ink-soft);margin-bottom:2rem;max-width:400px}
+        .rule{width:100%;height:.5px;background:var(--border);margin:2rem 0}
+        .link-inline{color:var(--ink);font-weight:400;text-decoration:none;border-bottom:.5px solid var(--border-mid);transition:color .18s,border-color .18s}
+        .link-inline:hover{color:var(--accent);border-color:var(--accent)}
+        .rating-label{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.85rem}
+        .stars{display:flex;gap:4px}
+        .star{width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:var(--ink-soft);text-decoration:none;border:.5px solid var(--border);border-radius:2px;transition:background .18s,color .18s,border-color .18s}
+        .star:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+        .star-good:hover{background:var(--accent);border-color:var(--accent);color:var(--cream)}
+        .deco{position:fixed;bottom:2rem;right:2.5rem;font-family:var(--serif);font-style:italic;font-size:72px;line-height:1;color:var(--ink);opacity:.04;pointer-events:none;user-select:none}
+    </style>
 </head>
 <body>
-Our base of knowledge contains articles for all occasions.
+<div class="deco">✦</div>
+<div class="page">
+    <p class="eyebrow">Knowledge Base</p>
+    <h1>FAQ</h1>
+    <p class="body-text">Our knowledge base covers articles for every occasion. If your case feels new or unique, we're here to help personally.</p>
 
-Is your case new or unique?
-<a href="/customer_help/faq">Search again </a> or <a href="/customer_help/support">contact our support team</a>.
+    <div class="rule"></div>
 
-Rate article:
-<a href="/customer_care/thanks"> 5 </a>
-<a href="/customer_care/thanks"> 4 </a>
-<a href="/customer_care/feedback">3</a>
-<a href="/customer_care/feedback">2</a>
-<a href="/customer_care/feedback">1</a>
+    <p class="body-text" style="margin-bottom:2rem">
+        Didn't find what you were looking for?
+        <a class="link-inline" href="/customer_help/faq">Search again</a> or <a class="link-inline" href="/customer_help/support">contact our support team</a>.
+    </p>
 
+    <div class="rule"></div>
+
+    <p class="rating-label">Rate this article</p>
+    <div class="stars">
+        <a class="star star-good" href="/customer_care/thanks" title="5 — Excellent">5</a>
+        <a class="star star-good" href="/customer_care/thanks" title="4 — Good">4</a>
+        <a class="star" href="/customer_care/feedback" title="3 — Okay">3</a>
+        <a class="star" href="/customer_care/feedback" title="2 — Poor">2</a>
+        <a class="star" href="/customer_care/feedback" title="1 — Bad">1</a>
+    </div>
+</div>
 </body>
 </html>
